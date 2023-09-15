@@ -1,6 +1,7 @@
 import { Component,Input, Output,EventEmitter } from '@angular/core';
 import { Character } from '../../Interfaces/character.interface';
 import { titulo } from '../../Interfaces/titulo.interfaces';
+import { first } from 'rxjs';
 
 
 @Component({
@@ -19,17 +20,16 @@ name:'Trunk',power:10
 
 // onDeleteId=Index value: number
 
-@Output()onDelete:EventEmitter<number>= new EventEmitter();
+@Output()onDelete:EventEmitter<string>= new EventEmitter();
 
 
-//ejecuta la emision 
-onDeleteCharacter(index:number):void{
-
-this.onDelete.emit(index);
+//ejecuta la emision
+onDeleteCharacter(id?:string):void{
+if (!id)return;
+console.log(first)
+this.onDelete.emit(id);
 
 }
-
-
 
 
 }

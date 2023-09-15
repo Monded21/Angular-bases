@@ -24,11 +24,13 @@ export class DbzService {
     },
   ];
 
-  onNewCharacter(character: Character): void {
+  addCharacter(character: Character): void {
     this.characters.push(character);
   }
 
-  onDeleteCharacter(index: number) {
-    this.characters.splice(index, 1);
+  //onDeleteCharacter(index: number) {
+   // this.characters.splice(index, 1);
+  deleteCharacterBy(id:string){
+this.characters=this.characters.filter(character=> character.id !==id);
   }
 }
